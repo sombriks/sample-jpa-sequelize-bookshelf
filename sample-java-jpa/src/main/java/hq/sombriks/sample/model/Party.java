@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -31,13 +32,16 @@ public class Party {
 
   @Column(name = "party_title")
   private String title;
-
+  
+  @OneToOne
   @JoinColumn(name = "person_id")
   private Person hoster;
 
+  @OneToOne
   @JoinColumn(name = "party_status_id")
   private PartyStatus status;
 
+  @OneToOne
   @JoinColumn(name = "party_type_id")
   private PartyType type;
 

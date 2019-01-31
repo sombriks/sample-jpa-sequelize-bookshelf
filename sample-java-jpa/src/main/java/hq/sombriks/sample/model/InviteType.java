@@ -23,10 +23,10 @@ public class InviteType {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "invite_status_id")
+  @Column(name = "invite_type_id")
   private Integer id;
 
-  @Column(name = "invite_status_description")
+  @Column(name = "invite_type_description")
   private String description;
 
 }

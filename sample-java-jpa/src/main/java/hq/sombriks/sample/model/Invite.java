@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -29,15 +30,19 @@ public class Invite {
   @Temporal(TemporalType.TIMESTAMP)
   private Date creation;
 
+  @OneToOne
   @JoinColumn(name = "invite_status_id")
   private InviteStatus status;
 
+  @OneToOne
   @JoinColumn(name = "invite_type_id")
   private InviteType type;
 
+  @OneToOne
   @JoinColumn(name = "person_id")
   private Person person;
 
+  @OneToOne
   @JoinColumn(name = "party_id")
   private Party party;
 

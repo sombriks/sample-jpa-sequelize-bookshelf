@@ -23,10 +23,10 @@ public class PartyType {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "party_status_id")
+  @Column(name = "party_type_id")
   private Integer id;
 
-  @Column(name = "party_status_description")
+  @Column(name = "party_type_description")
   private String description;
   
 }
