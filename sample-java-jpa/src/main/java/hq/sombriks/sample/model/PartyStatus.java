@@ -1,16 +1,11 @@
 package hq.sombriks.sample.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.JoinColumn;
-import javax.persistence.PrePersist;
+import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import lombok.Data;
 
@@ -23,7 +18,15 @@ public class PartyStatus {
   }
 
   public PartyStatus(int id) {
-
+    this.id = id;
   }
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "party_status_id")
+  private Integer id;
+
+  @Column(name = "party_status_description")
+  private String description;
 
 }

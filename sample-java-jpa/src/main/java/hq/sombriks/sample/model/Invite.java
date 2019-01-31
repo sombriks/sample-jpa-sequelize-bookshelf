@@ -17,37 +17,34 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "party")
-public class Party {
+@Table(name = "invite")
+public class Invite {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "party_id")
+  @Column(name = "invite_id")
   private Integer id;
 
-  @Column(name = "party_creation")
+  @Column(name = "invite_creation")
   @Temporal(TemporalType.TIMESTAMP)
   private Date creation;
 
-  @Column(name = "party_title")
-  private String title;
+  @JoinColumn(name = "invite_status_id")
+  private InviteStatus status;
+
+  @JoinColumn(name = "invite_type_id")
+  private InviteType type;
 
   @JoinColumn(name = "person_id")
-  private Person hoster;
+  private Person person;
 
-  @JoinColumn(name = "party_status_id")
-  private PartyStatus status;
-
-  @JoinColumn(name = "party_type_id")
-  private PartyType type;
+  @JoinColumn(name = "party_id")
+  private Party party;
 
   @PrePersist
   public void preInsert() {
     if (creation == null)
       creation = new Date();
-    if (status == null)
-      status = new PartyStatus(1);
-    if (type == null)
-      type = new PartyType(1);
   }
+
 }

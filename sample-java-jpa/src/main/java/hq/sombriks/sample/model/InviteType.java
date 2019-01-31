@@ -11,22 +11,22 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "party_type")
-public class PartyType {
+@Table(name = "invite_type")
+public class InviteType {
 
-  public PartyType() {
+  public InviteType() {
   }
 
-  public PartyType(int id) {
+  public InviteType(int id) {
     this.id = id;
   }
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "party_status_id")
+  @Column(name = "invite_status_id")
   private Integer id;
 
-  @Column(name = "party_status_description")
+  @Column(name = "invite_status_description")
   private String description;
-  
+
 }
