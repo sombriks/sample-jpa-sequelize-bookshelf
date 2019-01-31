@@ -1,15 +1,17 @@
 {
-  "name": "sample-javascript-sequelize",
+  "name": "sample-javascript-bookshelf",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "pg": "^7.8.0",
-    "sequelize": "^4.42.0"
+    "bookshelf": "^0.14.2",
+    "knex": "^0.16.3",
+    "pg": "^7.8.0"
   }
 }
