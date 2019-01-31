@@ -1,4 +1,4 @@
-const Sequelize = require("sequelize");
+// index.js
 const {Party} = require("./model/Party");
 const {Person} = require("./model/Person");
 const {PartyType} = require("./model/PartyType");
