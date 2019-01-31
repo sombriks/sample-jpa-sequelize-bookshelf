@@ -45,6 +45,11 @@ public class Invite {
   public void preInsert() {
     if (creation == null)
       creation = new Date();
+      if (status == null)
+        status = new InviteStatus(1);
+      if (type == null)
+        type = new InviteType(1);
+    
   }
 
 }
